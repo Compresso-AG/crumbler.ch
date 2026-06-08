@@ -1,0 +1,14 @@
+# crumbler.ch – statische Seite
+
+RewriteEngine On
+
+# www.crumbler.ch -> https://crumbler.ch (ohne www), 301 permanent.
+# Unabhängig vom Protokoll, landet immer auf HTTPS.
+RewriteCond %{HTTP_HOST} ^www\.crumbler\.ch$ [NC]
+RewriteRule ^(.*)$ https://crumbler.ch/$1 [R=301,L]
+
+# Standard-Dokument
+DirectoryIndex index.html index.php
+
+# UTF-8
+AddDefaultCharset UTF-8
