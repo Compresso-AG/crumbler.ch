@@ -319,14 +319,23 @@ p { font-size: 1.05rem; }
     white-space: nowrap;
 }
 .marquee-track {
-    display: inline-flex;
-    font-family: var(--font-display);
-    font-size: 0.8rem;
-    padding: 16px 0;
-    animation: scroll 18s linear infinite;
+    display: flex;
+    width: max-content;
+    animation: scroll 22s linear infinite;
 }
-.marquee-track span { padding-right: 0; }
-@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-33.33%); } }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-group {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    font-family: var(--font-display);
+    font-size: 0.68rem;
+    padding: 15px 0;
+}
+.marquee-group span { white-space: nowrap; padding: 0 22px; }
+.marquee-group i { color: var(--cookie); font-style: normal; }
+/* -50% == genau eine (von zwei identischen) Gruppen -> nahtlose Schleife */
+@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* ---------- Grid of cards ---------- */
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
