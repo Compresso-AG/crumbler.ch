@@ -1,0 +1,15 @@
+# Working / source files (not part of the published site)
+TMP/
+
+# DDEV
+/.ddev/.gitignore
+/.ddev/**/*.example
+/.ddev/db_snapshots
+/.ddev/sequelpro.spf
+/.ddev/import.yaml
+/.ddev/.dbimageBuild
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
