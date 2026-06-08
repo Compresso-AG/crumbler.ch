@@ -65,9 +65,27 @@
                         <li>Consent Mode v2</li>
                     </ul>
                 </div>
-                <div class="hero-art" aria-hidden="true">
+                <div class="hero-art">
                     <div class="cookie-stage">
-                        <img src="assets/logo-nobg.svg" alt="" class="cookie-sprite">
+                        <!-- Inline SVG so einzelne Teile (Teig, Rand, Schoko-Stücke) animierbar sind -->
+                        <svg class="cookie-sprite" id="crumbler-cookie" viewBox="0 0 1167.128 1167.127" role="img" aria-label="Crumbler Cookie" xmlns="http://www.w3.org/2000/svg">
+                            <rect class="dough" x="145.891" y="145.891" width="875.345" height="875.345"/>
+                            <g class="cookie-edge">
+                                <polygon class="edge edge-top" points="583.564 145.891 729.455 145.891 875.345 145.891 875.345 0 729.455 0 583.564 0 437.673 0 291.782 0 291.782 145.891 437.673 145.891 583.564 145.891"/>
+                                <rect class="edge corner-tl" x="145.891" y="145.891" width="145.891" height="145.891"/>
+                                <rect class="edge corner-tr" x="875.345" y="145.891" width="145.891" height="145.891"/>
+                                <polygon class="edge edge-left" points="145.891 729.455 145.891 583.564 145.891 437.673 145.891 291.782 0 291.782 0 437.673 0 583.564 0 729.455 0 875.346 145.891 875.346 145.891 729.455"/>
+                                <polygon class="edge edge-right" points="1021.237 291.782 1021.237 437.672 1021.237 583.563 1021.237 729.454 1021.237 875.345 1167.127 875.345 1167.127 729.454 1167.127 583.563 1167.127 437.672 1167.128 291.782 1021.237 291.782"/>
+                                <rect class="edge corner-br" x="875.346" y="875.345" width="145.891" height="145.891"/>
+                                <rect class="edge corner-bl" x="145.891" y="875.345" width="145.891" height="145.891"/>
+                                <polygon class="edge edge-bottom" points="583.564 1021.236 437.673 1021.236 291.782 1021.236 291.782 1167.127 437.673 1167.127 583.564 1167.127 729.455 1167.127 875.345 1167.127 875.345 1021.236 729.455 1021.236 583.564 1021.236"/>
+                            </g>
+                            <g class="cookie-chips">
+                                <rect class="chip chip-1" x="729.455" y="291.782" width="145.891" height="145.891"/>
+                                <rect class="chip chip-2" x="437.673" y="437.673" width="145.891" height="145.891"/>
+                                <rect class="chip chip-3" x="583.564" y="729.454" width="145.891" height="145.891"/>
+                            </g>
+                        </svg>
                         <span class="crumb crumb-1"></span>
                         <span class="crumb crumb-2"></span>
                         <span class="crumb crumb-3"></span>

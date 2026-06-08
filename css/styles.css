@@ -248,10 +248,15 @@ p { font-size: 1.05rem; }
 .cookie-sprite {
     width: 100%;
     height: 100%;
+    display: block;
     border: var(--px) solid var(--ink);
     box-shadow: 12px 12px 0 var(--ink);
     animation: bob 2.4s steps(4) infinite alternate;
 }
+/* Inline-SVG-Teile — einzeln animierbar via .dough / .edge / .chip (bzw. .chip-1..3) */
+.cookie-sprite .dough { fill: var(--cookie); }
+.cookie-sprite .edge  { fill: var(--ink); }
+.cookie-sprite .chip  { fill: var(--ink); transform-box: fill-box; transform-origin: center; }
 @keyframes bob { from { transform: translateY(0); } to { transform: translateY(-12px); } }
 
 .crumb {
