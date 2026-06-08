@@ -96,10 +96,11 @@ a { color: inherit; }
 .section-cookie {
     background: var(--cookie);
     color: var(--ink);
-    /* checkerboard dither */
+    /* dezente Schachbrett-Dither – niedriger Kontrast, damit loser Text
+       direkt darauf gut lesbar bleibt */
     background-image:
-        linear-gradient(45deg, var(--cookie-d) 25%, transparent 25%, transparent 75%, var(--cookie-d) 75%),
-        linear-gradient(45deg, var(--cookie-d) 25%, transparent 25%, transparent 75%, var(--cookie-d) 75%);
+        linear-gradient(45deg, rgba(28,28,28,0.05) 25%, transparent 25%, transparent 75%, rgba(28,28,28,0.05) 75%),
+        linear-gradient(45deg, rgba(28,28,28,0.05) 25%, transparent 25%, transparent 75%, rgba(28,28,28,0.05) 75%);
     background-size: 32px 32px;
     background-position: 0 0, 16px 16px;
 }
@@ -146,7 +147,7 @@ p { font-size: 1.05rem; }
     text-transform: uppercase;
 }
 .section-dark .kicker { color: var(--cookie); }
-.section-cookie .kicker { color: var(--ink); opacity: 0.7; }
+.section-cookie .kicker { color: var(--ink); opacity: 1; }
 .kicker.center { text-align: center; }
 
 .hl { color: var(--cookie); }
@@ -259,6 +260,40 @@ p { font-size: 1.05rem; }
 .cookie-sprite .dough { fill: var(--cookie); }
 .cookie-sprite .edge  { fill: var(--ink); }
 .cookie-sprite .chip  { fill: var(--ink); transform-box: fill-box; transform-origin: center; }
+
+/* ---- Niedliches Cookie-Gesicht (Augen + Mund) ---- */
+/* Jede Auge-/Mund-Gruppe transformiert um ihren eigenen Mittelpunkt. */
+.cookie-sprite .eye,
+.cookie-sprite .mouth { transform-box: fill-box; transform-origin: center; }
+
+/* Augäpfel blinzeln (synchron) – schnelles Doppel-Blinzeln alle paar Sekunden */
+.cookie-sprite .eye-ball { animation: blink 5s ease-in-out infinite; }
+
+/* Augen-Gruppen schauen gemächlich nach rechts/links und zurück */
+.cookie-sprite .eye { animation: glance 7s infinite; }
+
+/* Mund schmunzelt: kurz breiter & flacher = kleines Grinsen */
+.cookie-sprite .mouth { animation: smile 3.4s ease-in-out infinite; }
+
+@keyframes blink {
+    0%, 90%, 100% { transform: scaleY(1); }
+    92%           { transform: scaleY(0.12); }  /* zu */
+    94%           { transform: scaleY(1); }     /* auf */
+    96%           { transform: scaleY(0.12); }  /* nochmal zu (Doppel-Blinzeln) */
+    98%           { transform: scaleY(1); }     /* auf */
+}
+
+@keyframes glance {
+    0%, 22%   { transform: translateX(0); }
+    32%, 48%  { transform: translateX(45%); }   /* nach rechts schielen */
+    58%, 74%  { transform: translateX(-45%); }  /* nach links schielen */
+    84%, 100% { transform: translateX(0); }
+}
+
+@keyframes smile {
+    0%, 100% { transform: scale(1, 1); }
+    50%      { transform: scale(1.25, 0.55); }  /* kurzes Grinsen */
+}
 @keyframes bob { from { transform: translateY(0); } to { transform: translateY(-12px); } }
 
 .crumb {

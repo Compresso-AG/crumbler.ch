@@ -80,10 +80,11 @@
                                 <rect class="edge corner-bl" x="145.891" y="875.345" width="145.891" height="145.891"/>
                                 <polygon class="edge edge-bottom" points="583.564 1021.236 437.673 1021.236 291.782 1021.236 291.782 1167.127 437.673 1167.127 583.564 1167.127 729.455 1167.127 875.345 1167.127 875.345 1021.236 729.455 1021.236 583.564 1021.236"/>
                             </g>
-                            <g class="cookie-chips">
-                                <rect class="chip chip-1" x="729.455" y="291.782" width="145.891" height="145.891"/>
-                                <rect class="chip chip-2" x="437.673" y="437.673" width="145.891" height="145.891"/>
-                                <rect class="chip chip-3" x="583.564" y="729.454" width="145.891" height="145.891"/>
+                            <!-- Gesicht: chip-1/-2 = Augen (Gruppe blickt umher, rect blinzelt), chip-3 = Mund -->
+                            <g class="cookie-chips face">
+                                <g class="eye eye-right"><rect class="chip chip-1 eye-ball" x="729.455" y="291.782" width="145.891" height="145.891"/></g>
+                                <g class="eye eye-left"><rect class="chip chip-2 eye-ball" x="437.673" y="437.673" width="145.891" height="145.891"/></g>
+                                <g class="mouth"><rect class="chip chip-3" x="583.564" y="729.454" width="145.891" height="145.891"/></g>
                             </g>
                         </svg>
                         <span class="crumb crumb-1"></span>
