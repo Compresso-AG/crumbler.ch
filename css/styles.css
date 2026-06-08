@@ -249,8 +249,10 @@ p { font-size: 1.05rem; }
     width: 100%;
     height: 100%;
     display: block;
-    border: var(--px) solid var(--ink);
-    box-shadow: 12px 12px 0 var(--ink);
+    /* Der Cookie bringt seinen eigenen Pixel-Rand mit – kein zusätzlicher
+       Border/Box-Shadow (würde durch die offenen Ecken hässlich durchscheinen).
+       Tiefe stattdessen als pixeliger Versatz-Schatten direkt am SVG. */
+    filter: drop-shadow(8px 8px 0 var(--cookie-d));
     animation: bob 2.4s steps(4) infinite alternate;
 }
 /* Inline-SVG-Teile — einzeln animierbar via .dough / .edge / .chip (bzw. .chip-1..3) */
