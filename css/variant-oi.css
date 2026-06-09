@@ -1,0 +1,54 @@
+/* =========================================================
+   CRUMBLER – Typo-Variante "Oi"
+   Lädt NACH styles.css und tauscht nur die Schrift:
+     Titel (h1–h4)  -> "Oi"
+     Lauftext/UI    -> "DM Sans" (Medium 500)
+   Farbwelt, Layout, Buttons, Marquee bleiben unverändert.
+   ========================================================= */
+
+:root {
+    /* UI-Chrome (Nav, Buttons, Labels) und Fliesstext -> DM Sans */
+    --font-display: "DM Sans", system-ui, sans-serif;
+    --font-body:    "DM Sans", system-ui, sans-serif;
+}
+
+/* Fliesstext gut lesbar: Antialiasing an, keine Pixel-Rasterung */
+body {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    image-rendering: auto;
+}
+
+/* Titel in "Oi" */
+h1, h2, h3, h4 {
+    font-family: "Oi", system-ui, cursive;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.15;
+}
+h1 { line-height: 1.02; }
+
+/* Kleine UI-Texte für DM Sans etwas grösser/fetter (Press-Start-Grössen waren extrem kompakt) */
+#main-nav a       { font-size: 0.95rem; font-weight: 600; letter-spacing: 0; }
+.logo-word        { font-size: 1.25rem; font-weight: 800; letter-spacing: 0.5px; }
+.btn              { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.2px; }
+.btn-small        { font-size: 0.85rem; }
+.kicker           { font-size: 0.8rem;  font-weight: 700; letter-spacing: 1.5px; }
+.hero-badges li   { font-size: 0.8rem;  font-weight: 600; }
+.feature-group-title { font-size: 0.95rem; font-weight: 700; }
+.lead             { font-size: 1.2rem;  font-weight: 600; line-height: 1.5; }
+.sub-price        { font-size: 0.85rem; font-weight: 600; }
+.step-number      { font-size: 1.4rem;  font-weight: 800; }
+.price            { font-size: 3rem;    font-weight: 800; }
+.price-cur        { font-size: 1.2rem;  font-weight: 700; }
+.benefits-list strong { font-size: 1.02rem; font-weight: 700; }
+.marquee-group    { font-size: 1rem;    font-weight: 600; }
+
+/* "Oi" ist sehr fett – Titel-Schatten etwas zurücknehmen, damit es ruhig bleibt */
+h1 { text-shadow: 3px 3px 0 var(--cookie); }
+.section-dark h2, .section-light h2 { text-shadow: 2px 2px 0 var(--cookie); }
+.section-cookie h2 { text-shadow: 2px 2px 0 var(--cream); }

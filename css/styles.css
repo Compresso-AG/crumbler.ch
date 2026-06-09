@@ -9,6 +9,7 @@
 :root {
     --cream:    #efe1bb;
     --cream-2:  #e6d4a3;   /* deeper cream for patterns */
+    --btn-white:#fffdf7;   /* heller Button-Hintergrund (inaktiv) */
     --cookie:   #a37b61;
     --cookie-d: #835f49;   /* darker cookie for shadows */
     --ink:      #1c1c1c;
@@ -160,7 +161,7 @@ p { font-size: 1.05rem; }
     text-decoration: none;
     padding: 16px 22px;
     border: var(--px) solid var(--ink);
-    background: var(--cream);
+    background: var(--btn-white);
     color: var(--ink);
     box-shadow: var(--shadow-hard-sm);
     transition: transform .08s steps(2), box-shadow .08s steps(2);
@@ -172,7 +173,7 @@ p { font-size: 1.05rem; }
 .btn:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--ink); }
 
 .btn-primary { background: var(--cookie); color: var(--ink); }
-.btn-secondary { background: var(--cream); color: var(--ink); }
+.btn-secondary { background: var(--btn-white); color: var(--ink); }
 .btn-small { padding: 11px 16px; font-size: 0.6rem; box-shadow: var(--px) var(--px) 0 var(--ink); }
 .btn-block { display: block; width: 100%; }
 
@@ -259,41 +260,7 @@ p { font-size: 1.05rem; }
 /* Inline-SVG-Teile — einzeln animierbar via .dough / .edge / .chip (bzw. .chip-1..3) */
 .cookie-sprite .dough { fill: var(--cookie); }
 .cookie-sprite .edge  { fill: var(--ink); }
-.cookie-sprite .chip  { fill: var(--ink); transform-box: fill-box; transform-origin: center; }
-
-/* ---- Niedliches Cookie-Gesicht (Augen + Mund) ---- */
-/* Jede Auge-/Mund-Gruppe transformiert um ihren eigenen Mittelpunkt. */
-.cookie-sprite .eye,
-.cookie-sprite .mouth { transform-box: fill-box; transform-origin: center; }
-
-/* Augäpfel blinzeln (synchron) – schnelles Doppel-Blinzeln alle paar Sekunden */
-.cookie-sprite .eye-ball { animation: blink 5s ease-in-out infinite; }
-
-/* Augen-Gruppen schauen gemächlich nach rechts/links und zurück */
-.cookie-sprite .eye { animation: glance 7s infinite; }
-
-/* Mund schmunzelt: kurz breiter & flacher = kleines Grinsen */
-.cookie-sprite .mouth { animation: smile 3.4s ease-in-out infinite; }
-
-@keyframes blink {
-    0%, 90%, 100% { transform: scaleY(1); }
-    92%           { transform: scaleY(0.12); }  /* zu */
-    94%           { transform: scaleY(1); }     /* auf */
-    96%           { transform: scaleY(0.12); }  /* nochmal zu (Doppel-Blinzeln) */
-    98%           { transform: scaleY(1); }     /* auf */
-}
-
-@keyframes glance {
-    0%, 22%   { transform: translateX(0); }
-    32%, 48%  { transform: translateX(45%); }   /* nach rechts schielen */
-    58%, 74%  { transform: translateX(-45%); }  /* nach links schielen */
-    84%, 100% { transform: translateX(0); }
-}
-
-@keyframes smile {
-    0%, 100% { transform: scale(1, 1); }
-    50%      { transform: scale(1.25, 0.55); }  /* kurzes Grinsen */
-}
+.cookie-sprite .chip  { fill: var(--ink); }
 @keyframes bob { from { transform: translateY(0); } to { transform: translateY(-12px); } }
 
 .crumb {
