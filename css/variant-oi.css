@@ -61,5 +61,8 @@ h4 { font-size: 0.95rem; }
 
 /* "Oi" ist sehr fett – Titel-Schatten etwas zurücknehmen, damit es ruhig bleibt */
 h1 { text-shadow: 3px 3px 0 var(--cookie); }
+/* Brauner Hervorhebungs-Text braucht einen DUNKLEN Schatten (der braune
+   Schatten auf braunem Text wäre sonst kontrastlos/unleserlich). */
+h1 .hl { text-shadow: 3px 3px 0 var(--ink); }
 .section-dark h2, .section-light h2 { text-shadow: 2px 2px 0 var(--cookie); }
 .section-cookie h2 { text-shadow: 2px 2px 0 var(--cream); }
