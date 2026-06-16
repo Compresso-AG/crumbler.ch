@@ -67,3 +67,8 @@ h4 { font-size: 0.95rem; }
 h1 { text-shadow: var(--px) var(--px) 0 var(--cookie); }
 .section-dark h2, .section-light h2 { text-shadow: 3px 3px 0 var(--cookie); }
 .section-cookie h2 { text-shadow: 3px 3px 0 var(--cream); }
+
+/* Schachbrettmuster entfernen – Cookie-Sektionen einfarbig braun */
+.section-cookie {
+    background-image: none;
+}
