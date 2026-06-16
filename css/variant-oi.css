@@ -72,3 +72,15 @@ h1 { text-shadow: var(--px) var(--px) 0 var(--cookie); }
 .section-cookie {
     background-image: none;
 }
+
+/* Häkchen in die braunen Bullet-Kästchen der Vorteile-Liste */
+.benefits-list li::before {
+    content: "✓";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1;
+}
