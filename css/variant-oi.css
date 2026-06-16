@@ -1,9 +1,9 @@
 /* =========================================================
    CRUMBLER – Typo-Variante "Oi"
    Lädt NACH styles.css und tauscht nur die Schrift:
-     Titel (h1–h4)  -> "Oi"
-     Lauftext/UI    -> "DM Sans" (Medium 500)
-   Farbwelt, Layout, Buttons, Marquee bleiben unverändert.
+     Grosse Titel (h1, h2) -> "Press Start 2P" (8-Bit, wie index.html)
+     Lauftext/UI/Marquee   -> "DM Sans" (Medium 500)
+   Farbwelt, Layout, Buttons bleiben unverändert.
    ========================================================= */
 
 :root {
@@ -23,15 +23,19 @@ body {
     image-rendering: auto;
 }
 
-/* Nur die GROSSEN Titel in "Oi" – die Display-Schrift wird sonst bei
-   kleinen Überschriften zu fett/dicht und damit unleserlich. */
+/* Nur die GROSSEN Titel in der 8-Bit-Schrift "Press Start 2P" – kleine
+   Überschriften werden damit zu dicht/unleserlich und bleiben DM Sans. */
 h1, h2 {
-    font-family: "Oi", system-ui, cursive;
+    font-family: "Press Start 2P", monospace;
     font-weight: 400;
-    letter-spacing: 0;
-    line-height: 1.15;
+    letter-spacing: 0.5px;
+    line-height: 1.35;
 }
-h1 { line-height: 1.02; }
+h1 {
+    font-size: clamp(2.1rem, 6vw, 4rem);
+    line-height: 1.18;
+}
+h2 { font-size: clamp(1.3rem, 3.4vw, 2.1rem); }
 
 /* Kleinere Überschriften in DM Sans Bold = klar lesbar, gleicher Look */
 h3, h4,
@@ -59,10 +63,7 @@ h4 { font-size: 0.95rem; }
 .benefits-list strong { font-size: 1.02rem; font-weight: 700; }
 .marquee-group    { font-size: 1rem;    font-weight: 600; }
 
-/* "Oi" ist sehr fett – Titel-Schatten etwas zurücknehmen, damit es ruhig bleibt */
-h1 { text-shadow: 3px 3px 0 var(--cookie); }
-/* Brauner Hervorhebungs-Text braucht einen DUNKLEN Schatten (der braune
-   Schatten auf braunem Text wäre sonst kontrastlos/unleserlich). */
-h1 .hl { text-shadow: 3px 3px 0 var(--ink); }
-.section-dark h2, .section-light h2 { text-shadow: 2px 2px 0 var(--cookie); }
-.section-cookie h2 { text-shadow: 2px 2px 0 var(--cream); }
+/* Pixel-Titel mit hartem Versatz-Schatten wie in index.html */
+h1 { text-shadow: var(--px) var(--px) 0 var(--cookie); }
+.section-dark h2, .section-light h2 { text-shadow: 3px 3px 0 var(--cookie); }
+.section-cookie h2 { text-shadow: 3px 3px 0 var(--cream); }
