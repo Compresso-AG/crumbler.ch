@@ -1,4 +1,4 @@
-# crumbler.ch – statische Seite
+# crumbler.ch
 
 RewriteEngine On
 
@@ -8,7 +8,7 @@ RewriteCond %{HTTP_HOST} ^www\.crumbler\.ch$ [NC]
 RewriteRule ^(.*)$ https://crumbler.ch/$1 [R=301,L]
 
 # Standard-Dokument
-DirectoryIndex index.html index.php
+DirectoryIndex index.php index.html
 
 # UTF-8
 AddDefaultCharset UTF-8
