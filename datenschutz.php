@@ -25,6 +25,7 @@ require __DIR__ . '/includes/header.php';
                         Telefon: +41 43 488 86 00<br>
                         E-Mail: <a href="mailto:info@compresso.ch">info@compresso.ch</a>
                     </p>
+                    <p>Zuständige Kontaktperson für den Datenschutz ist Fridolin Stauffacher (<a href="mailto:info@compresso.ch">info@compresso.ch</a>).</p>
 
                     <h2>2. Begriffe und Geltungsbereich</h2>
                     <p>«Personendaten» sind alle Angaben, die sich auf eine bestimmte oder bestimmbare natürliche Person beziehen. «Bearbeiten» umfasst jeden Umgang mit Personendaten, etwa das Beschaffen, Speichern, Verwenden, Bekanntgeben oder Löschen.</p>
